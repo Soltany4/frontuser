@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
+import { User } from '../user';
 
 declare var $:any;
 @Component({
@@ -10,24 +12,28 @@ declare var $:any;
 })
 export class SignupComponent implements OnInit {
 
+
+  user: User = new User();
+
     signup:FormGroup|any;
   
-    constructor(private _route:Router){ }
+    constructor(private _route:Router,
+      private userService:UserService){ }
   
     ngOnInit(): void {
-      this.signup= new FormGroup({
-        'fname': new FormControl(),
-        'lname': new FormControl(),
+      this.signup = new FormGroup({
+        'name': new FormControl(),
+        'prenom': new FormControl(),
         'email': new FormControl(),
         'phone': new FormControl(),
-        'adresse': new FormControl(),
+        'adress': new FormControl(),
         'password': new FormControl()
-  
       })
     }
-    signupdata(signup:FormGroup){
-      console.log(this.signup.value)
-  
+    signupdata(){
+      console.log(this.user)
+      this.userService.signUp(this.user).subscribe();
+      this._route.navigate([''])
     }
 
     sbtn(){

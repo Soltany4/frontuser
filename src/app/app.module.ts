@@ -18,6 +18,8 @@ import { MatMenuModule} from '@angular/material/menu';
 import { MatIconModule} from '@angular/material/icon';
 import { MatListModule} from '@angular/material/list';
 import { EmploisComponent } from './dashboard/emplois/emplois.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatiereComponent } from './dashboard/matiere/matiere.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { EmploisComponent } from './dashboard/emplois/emplois.component';
     HeaderComponent,
 
     HomeComponent,
-    EmploisComponent
+    EmploisComponent,
+    MatiereComponent,
 
   
   ],
@@ -42,7 +45,8 @@ import { EmploisComponent } from './dashboard/emplois/emplois.component';
     MatListModule,
     MatMenuModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

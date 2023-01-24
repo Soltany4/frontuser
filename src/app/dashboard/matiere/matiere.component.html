@@ -1,0 +1,25 @@
+  <div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Matieres</div>
+    <div class="page__content shadow p-3 position-relative">
+      <div class="page__content-data position-absolute text-center">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nom de matiere</th>
+              <th scope="col">Nombre de chapitres</th>
+              <th scope="col">Télécharger</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let mat of matiere">
+              <th scope="row">{{mat.id}}</th>
+              <td>{{mat.name}}</td>
+              <td>{{mat.chaps}}</td>
+              <td><a href="">Télécharger</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

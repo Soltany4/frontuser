@@ -34,6 +34,13 @@ children: [
          m=>m.EmploisModule
        )
    },
+   {
+    path: 'matiere',
+    loadChildren: () =>
+      import('./dashboard/matiere/matiere.module').then(
+        m => m.MatiereModule
+      )
+   }
 ] 
 
 }
